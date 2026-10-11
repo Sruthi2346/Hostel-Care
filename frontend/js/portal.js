@@ -1,4 +1,4 @@
-const API='http://127.0.0.1:8000/api';
+const API = 'https://hostel-care-api-7mvk.onrender.com/api';
 const token=localStorage.getItem('hostelcare_token');
 let meUser=JSON.parse(localStorage.getItem('hostelcare_user')||'null');
 let activePage='dashboard'; let cache={};

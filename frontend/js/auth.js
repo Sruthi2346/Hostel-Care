@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:8000/api';
+const API = 'https://hostel-care-api-7mvk.onrender.com/api';
 const msg = document.getElementById('message');
 function showMessage(text, type='error') { msg.textContent=text; msg.className='message '+type; }
 function setTab(tab) {

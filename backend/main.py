@@ -16,14 +16,24 @@ load_dotenv()
 app = FastAPI(title="Hostel Care API", version="1.0.0", description="Hostel admissions, rooms, attendance, welfare and maintenance")
 
 origins = [
-    "http://127.0.0.1:5500",
-    "http://localhost:5500",
-    "http://127.0.0.1:5501",
-    "http://localhost:5501",
+    origin.strip().rstrip("/")
+    for origin in os.getenv(
+        "FRONTEND_ORIGINS",
+        "http://127.0.0.1:5500,http://localhost:5500,"
+        "http://127.0.0.1:5501,http://localhost:5501"
+    ).split(",")
+    if origin.strip()
 ]
-print("DEBUG CORS ORIGINS:", repr(origins))
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
+print("DEBUG CORS ORIGINS:", repr(origins))
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 class RegisterIn(BaseModel):
     name: str = Field(min_length=2, max_length=120)
     email: EmailStr
