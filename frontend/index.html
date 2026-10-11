@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Hostel Care | Login</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="auth-body">
+        <main class="auth-wrap">
+            <section class="auth-brand">
+                <div class="brand-mark">HC</div>
+                <p class="eyebrow">SMART HOSTEL MANAGEMENT</p>
+                <h1>Hostel Care</h1>
+                <p>One place for hostel rooms, attendance, student welfare and maintenance.</p>
+                <div class="feature-pills">
+                    <span>Room allocation</span>
+                    <span>Attendance</span>
+                    <span>Maintenance</span>
+                </div>
+            </section>
+            <section class="auth-card">
+                <div class="auth-tabs">
+                    <button class="tab active" data-auth-tab="login">Login</button>
+                    <button class="tab" data-auth-tab="register">Student Register</button>
+                </div>
+                <div id="message" class="message hidden"></div>
+                <form id="login-form" class="auth-form">
+                    <h2>Welcome back</h2>
+                    <p class="muted">Login to your Hostel Care account.</p>
+                    <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+                    <label>Password<input type="password" name="password" required minlength="8" placeholder="Enter password"></label>
+                    <button class="btn primary full" type="submit">Login</button>
+                    <p class="muted tiny">Admin account is initialized from backend/.env on first startup.</p>
+                </form>
+                <form id="register-form" class="auth-form hidden">
+                    <h2>Student registration</h2>
+                    <p class="muted">Students can self-register. Staff and admin accounts must be created by an admin.</p>
+                    <div class="form-grid">
+                        <label>Full name<input name="name" required></label>
+                        <label>Student ID<input name="student_number" required placeholder="e.g. HC2026001"></label>
+                        <label>Email<input type="email" name="email" required></label>
+                        <label>Phone<input name="phone"></label>
+                        <label>Password<input type="password" name="password" required minlength="8"></label>
+                        <label>Department<input name="department" required placeholder="e.g. CSE"></label>
+                        <label>Admission year<input type="number" name="admission_year" min="2000" max="2100" required></label>
+                        <label>Current study year<input type="number" name="study_year" min="1" max="8" value="1" required></label>
+                        <label>Guardian name<input name="guardian_name"></label>
+                        <label>Guardian phone<input name="guardian_phone"></label>
+                    </div>
+                    <button class="btn primary full" type="submit">Create student account</button>
+                </form>
+            </section>
+            <p class="auth-foot">Hostel Care · Student welfare, organized better.</p>
+        </main>
+        <script src="js/auth.js"></script>
+    </body>
+    </html>
